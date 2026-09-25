@@ -1,0 +1,18 @@
+yaml
+
+name: Hello CI
+on:
+   push:
+      branches:[main]
+   pull_request:
+     branches: [main]
+ jobs:
+   greet:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v4
+        - name: Say hello 
+          run: echo "hello from Github Actions!"
+        - name: show files
+          run: ls -la
+      
